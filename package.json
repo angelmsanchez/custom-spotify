@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prisma:seed": "npx prisma db seed",
-    "prisma:push": "npx prisma push db",
+    "prisma:push": "npx prisma db push",
     "prisma:studio": "npx prisma studio",
     "lint:fix": "next lint --fix",
     "lint:fix:prisma": "next lint -- --dir prisma --fix"
