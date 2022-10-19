@@ -40,5 +40,6 @@ module.exports = {
       },
     ],
     'prettier/prettier': 'warn',
+    'prettier.singleQuote': 2,
   },
 };
