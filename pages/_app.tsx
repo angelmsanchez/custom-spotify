@@ -36,14 +36,13 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <StoreProvider store={store}>
-        <PlayerLayout>
+        {Component.authPage ? (
           <Component {...pageProps} />
-        </PlayerLayout>
-        {/* {Component.authPage ? (
-        <Component {...pageProps} />
-      ) : (
-        <Component {...pageProps} />
-      )} */}
+        ) : (
+          <PlayerLayout>
+            <Component {...pageProps} />
+          </PlayerLayout>
+        )}
       </StoreProvider>
     </ChakraProvider>
   );
