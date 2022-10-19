@@ -7,13 +7,13 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/api/signup",
+			"name": "sign up",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"prueba-3@test.com\",\r\n    \"password\": \"abc\",\r\n    \"firstName\": \"Prueba 3\",\r\n    \"lastName\": \"-\"\r\n}",
+					"raw": "{\r\n    \"email\": \"prueba-4@test.com\",\r\n    \"password\": \"abc\",\r\n    \"firstName\": \"Prueba 4\",\r\n    \"lastName\": \"-\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -30,6 +30,35 @@
 					"path": [
 						"api",
 						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"prueba-4@test.com\",\r\n    \"password\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signin"
 					]
 				}
 			},
