@@ -39,7 +39,6 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'prettier/prettier': 'warn',
-    'prettier.singleQuote': 2,
+    'prettier/prettier': 'warn'
   },
 };

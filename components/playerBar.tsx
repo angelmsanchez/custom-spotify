@@ -1,6 +1,6 @@
-import { Box, Flex, Text } from "@chakra-ui/layout";
-import { useStoreState } from "easy-peasy";
-import Player from "./player";
+import { Box, Flex, Text } from '@chakra-ui/layout';
+import { useStoreState } from 'easy-peasy';
+import Player from './player';
 
 const PlayerBar = () => {
   const songs = useStoreState((state: any) => state.activeSongs);
@@ -15,9 +15,7 @@ const PlayerBar = () => {
             <Text fontSize="sm">{activeSong.artist.name}</Text>
           </Box>
         ) : null}
-        <Box width="40%">
-          {activeSong ? <Player songs={songs} activeSong={activeSong} /> : null}
-        </Box>
+        <Box width="40%">{activeSong ? <Player songs={songs} activeSong={activeSong} /> : null}</Box>
       </Flex>
     </Box>
   );

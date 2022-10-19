@@ -9,9 +9,9 @@ import {
   Center,
   Flex,
   Text,
-} from "@chakra-ui/react";
-import ReactHowler from "react-howler";
-import { useEffect, useRef, useState } from "react";
+} from '@chakra-ui/react';
+import ReactHowler from 'react-howler';
+import { useEffect, useRef, useState } from 'react';
 import {
   MdShuffle,
   MdSkipPrevious,
@@ -19,15 +19,13 @@ import {
   MdOutlinePlayCircleFilled,
   MdOutlinePauseCircleFilled,
   MdOutlineRepeat,
-} from "react-icons/md";
-import { useStoreActions } from "easy-peasy";
-import { formatTime } from "../lib/formatters";
+} from 'react-icons/md';
+import { useStoreActions } from 'easy-peasy';
+import { formatTime } from '../lib/formatters';
 
 const Player = ({ songs, activeSong }) => {
   const [playing, setPlaying] = useState(true);
-  const [index, setIndex] = useState(
-    songs.findIndex((s) => s.id === activeSong.id)
-  );
+  const [index, setIndex] = useState(songs.findIndex(s => s.id === activeSong.id));
   const [seek, setSeek] = useState(0.0);
   const [isSeeking, setIsSeeking] = useState(false);
   const [repeat, setRepeat] = useState(false);
@@ -61,26 +59,26 @@ const Player = ({ songs, activeSong }) => {
     repeatRef.current = repeat;
   }, [repeat]);
 
-  const setPlayState = (value) => {
+  const setPlayState = value => {
     setPlaying(value);
   };
 
   const onShuffle = () => {
-    setShuffle((state) => !state);
+    setShuffle(state => !state);
   };
 
   const onRepeat = () => {
-    setRepeat((state) => !state);
+    setRepeat(state => !state);
   };
 
   const prevSong = () => {
-    setIndex((state) => {
+    setIndex(state => {
       return state ? state - 1 : songs.length - 1;
     });
   };
 
   const nextSong = () => {
-    setIndex((state) => {
+    setIndex(state => {
       if (shuffle) {
         const next = Math.floor(Math.random() * songs.length);
 
@@ -108,7 +106,7 @@ const Player = ({ songs, activeSong }) => {
     setDuration(songDuration);
   };
 
-  const onSeek = (e) => {
+  const onSeek = e => {
     setSeek(parseFloat(e[0]));
     soundRef.current.seek(e[0]);
   };
@@ -116,13 +114,7 @@ const Player = ({ songs, activeSong }) => {
   return (
     <Box>
       <Box>
-        <ReactHowler
-          playing={playing}
-          src={activeSong?.url}
-          ref={soundRef}
-          onLoad={onLoad}
-          onEnd={onEnd}
-        />
+        <ReactHowler playing={playing} src={activeSong?.url} ref={soundRef} onLoad={onLoad} onEnd={onEnd} />
       </Box>
       <Center color="gray.600">
         <ButtonGroup>
@@ -131,7 +123,7 @@ const Player = ({ songs, activeSong }) => {
             variant="link"
             aria-label="shuffle"
             fontSize="24px"
-            color={shuffle ? "white" : "gray.600"}
+            color={shuffle ? 'white' : 'gray.600'}
             onClick={onShuffle}
             icon={<MdShuffle />}
           />
@@ -178,7 +170,7 @@ const Player = ({ songs, activeSong }) => {
             variant="link"
             aria-label="repeat"
             fontSize="24px"
-            color={repeat ? "white" : "gray.600"}
+            color={repeat ? 'white' : 'gray.600'}
             onClick={onRepeat}
             icon={<MdOutlineRepeat />}
           />
